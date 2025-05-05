@@ -57,7 +57,7 @@
                 </div>
 
                 <h2>簡介Introduction</h2>
-                <p>這是我大一上學期的期中作業。<br>由於我自己是初音未來的資深粉絲，本身又非常喜歡Weekender Girl這首歌。<br>所以就想為這首可愛活潑的歌量身打造一隻動畫MV，像是剛下課走在街上的少女</p>
+                <p>這是我大一上學期的期中作業。<br>由於我自己是初音未來的資深粉絲，本身又非常喜歡Weekender Girl這首歌。<br>所以就想為這首可愛活潑的歌量身打造一隻動畫MV，初音未來是剛下課走在街上的少女。</p>
                 <p>那個時候我剛學AE不到半年，對於AE的掌握度還不是很高。<br>從繪製人物到分層，還用各種插件做輔助，這隻動畫我花了整整一個月才完成。</p>
 
 
@@ -113,7 +113,11 @@
         </div>
     </footer>
 
-    <a href="../../index.html" class="back-button">BACK</a>
+    <a href="../../index.html" class="home-button-fixed">HOME</a>
+    <div class="project-nav-fixed">
+      <a href="../outofhole/outofhole.html" class="prev-btn-fixed">&#x2039;</a>
+      <a href="../Win/mahjong.html" class="next-btn-fixed">&#x203A;</a>
+    </div>
 
     <!-- 图片放大 Modal -->
     <div id="img-modal" class="img-modal">
@@ -122,12 +126,34 @@
     </div>
 
     <script>
+    // 页面加载动画
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.querySelector('.project-container');
+        const navButtons = document.querySelector('.project-nav-fixed');
+        const homeButton = document.querySelector('.home-button-fixed');
+        
+        // 页面加载动画
+        setTimeout(() => {
+            container.classList.add('visible');
+        }, 100);
+        
+        // 导航按钮动画
+        setTimeout(() => {
+            navButtons.classList.add('visible');
+        }, 300);
+        
+        // HOME按钮动画
+        setTimeout(() => {
+            homeButton.classList.add('visible');
+        }, 500);
+    });
+
+    // 图片 Modal 相关代码
     function openModal(src) {
         document.getElementById('img-modal-img').src = src;
         document.getElementById('img-modal').classList.add('show');
     }
 
-    // 图片 Modal 相关代码
     document.querySelectorAll('.peek-image img').forEach(img => {
         img.addEventListener('click', function() {
             document.getElementById('img-modal-img').src = this.src;
