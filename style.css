@@ -2163,15 +2163,6 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, ul, li, span, div, button, input, text
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transform: scale(0.9);
     opacity: 0.8;
-    line-height: 0;
-    padding-bottom: 2px;
-}
-
-.prev-btn-fixed::before,
-.next-btn-fixed::before {
-    content: '';
-    display: inline-block;
-    transform: translateY(-2px);
 }
 
 .prev-btn-fixed:hover,
